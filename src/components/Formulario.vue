@@ -356,11 +356,17 @@
         class="col-6 text-white bg-secondary"
         :style="'background-color:' + form.color + '!important'"
       >
-        <span class="fs-4">ESTADO DO OBJETO </span> <br />
-        {{ form }}
         <hr />
         <div class="mb-5 row">
-          <span>Estado do objeto</span>
+          <span class="fs-4">ESTADO DO OBJETO </span> <br />
+          <!-- Template -->
+          <span>
+            Meu nome é {{ form.name }} e tenho {{ form.age }} anos, <br />
+            tenho interesse pelas seguintes tecnologias:
+            <div v-for="interesse in form.interests" :key="interesse.id">
+              {{ interesse }}
+            </div>
+          </span>
         </div>
 
         <span class="fs-4">SAÍDA DE DADOS</span>
